@@ -1,0 +1,178 @@
+<!-- ==========================================================================
+     RUTEA · explorar.html (Explorador de destinos)
+     ========================================================================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explorar destinos · RUTEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- === SECCIÓN 1: NAVBAR (global) === -->
+<header class="navbar">
+  <a href="index.html" class="brand" aria-label="RUTEA inicio">
+    <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
+      <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
+      <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
+      <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
+      <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
+      <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+    <span class="brand-text">RUTEA<i></i></span>
+  </a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="explorar.html" class="nav-link active">Explorar</a>
+    <a href="favoritos.html" class="nav-link">Favoritos</a>
+    <a href="mi-ruta.html" class="nav-link">Mi ruta</a>
+    <a href="acerca.html" class="nav-link">Acerca de</a>
+  </nav>
+  <a href="crear-ruta.html" class="btn btn-orange nav-cta">Crear ruta</a>
+</header>
+
+<main class="container">
+
+  <!-- === SECCIÓN 2: ENCABEZADO Y BUSCADOR === -->
+  <header class="page-head">
+    <p class="eyebrow">EXPLORADOR DE DESTINOS</p>
+    <h1>Busca y compara lugares</h1>
+    <p class="lead">Filtra por región. Las tarjetas muestran datos que, en el producto, vendrán de una API pública.</p>
+  </header>
+  <form class="search-pill" action="explorar.html" method="get">
+    <input type="text" name="q" value="costa" aria-label="Buscar destino">
+    <a href="explorar.html" class="btn btn-orange">Buscar</a>
+  </form>
+
+  <!-- === SECCIÓN 3: LAYOUT SIDEBAR + RESULTADOS === -->
+  <div class="explore-layout">
+
+    <!-- Sidebar: filtros por región -->
+    <aside class="card sidebar">
+      <h3>Región</h3>
+      <div class="pill-list">
+        <a href="explorar.html" class="pill pill-active">Todas</a>
+        <a href="explorar.html" class="pill">Europa</a>
+        <a href="explorar.html" class="pill">América</a>
+        <a href="explorar.html" class="pill">Asia</a>
+        <a href="explorar.html" class="pill">África</a>
+        <a href="explorar.html" class="pill">Oceanía</a>
+      </div>
+      <p class="note">Un filtro activo a la vez. Sin resultados se muestra un estado vacío.</p>
+      <a href="index.html#recomendador" class="btn btn-outline btn-block">No sé a dónde ir</a>
+    </aside>
+
+    <!-- Resultados -->
+    <div>
+      <p class="meta results-count">6 destinos · ordenados por coincidencia</p>
+
+      <!-- === SECCIÓN 4: GRID DE DESTINOS === -->
+      <div class="dest-grid">
+        <article class="card dest-card">
+          <div class="media"><img class="photo" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="Lisboa, Portugal" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Portugal</h3><p class="meta">Europa · Lisboa</p>
+            <span class="badge badge-blue">Europa</span>
+            <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+          </div>
+        </article>
+        <article class="card dest-card">
+          <div class="media"><img class="photo" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Kioto, Japón" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Japón</h3><p class="meta">Asia · Tokio</p>
+            <span class="badge badge-blue">Asia</span>
+            <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+          </div>
+        </article>
+        <article class="card dest-card">
+          <div class="media"><img class="photo" src="https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=800&q=80" alt="Guatapé, Colombia" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Colombia</h3><p class="meta">América · Bogotá</p>
+            <span class="badge badge-blue">América</span>
+            <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+          </div>
+        </article>
+        <article class="card dest-card">
+          <div class="media"><img class="photo" src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=800&q=80" alt="Reikiavik, Islandia" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Islandia</h3><p class="meta">Europa · Reikiavik</p>
+            <span class="badge badge-blue">Europa</span>
+            <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+          </div>
+        </article>
+        <article class="card dest-card">
+          <div class="media"><img class="photo" src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Machu Picchu, Perú" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Perú</h3><p class="meta">América · Lima</p>
+            <span class="badge badge-blue">América</span>
+            <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+          </div>
+        </article>
+        <article class="card dest-card">
+          <div class="media"><img class="photo" src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=800&q=80" alt="Marruecos" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Marruecos</h3><p class="meta">África · Rabat</p>
+            <span class="badge badge-blue">África</span>
+            <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- === SECCIÓN 5: ESTADO VACÍO === -->
+      <div class="card empty-card">
+        <p class="eyebrow">ESTADO VACÍO</p>
+        <h3>Sin coincidencias para "Antártida"</h3>
+        <p>Prueba otra región o abre el recomendador si todavía estás eligiendo el tipo de viaje.</p>
+        <div class="actions">
+          <a href="index.html#recomendador" class="btn btn-orange">Usar recomendador</a>
+          <a href="explorar.html" class="link-orange">Quitar filtros</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- === SECCIÓN 6: FOOTER (global) === -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="brand" aria-label="RUTEA inicio">
+        <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
+          <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
+          <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
+          <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
+          <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
+          <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">RUTEA<i></i></span>
+      </a>
+      <p>Descubre nuevos lugares, crea tu ruta. Exploración, clima y planificación en un solo lugar.</p>
+    </div>
+    <div class="footer-col">
+      <h4>EXPLORAR</h4>
+      <a href="explorar.html">Destinos</a>
+      <a href="index.html#recomendador">Recomendador</a>
+      <a href="detalle-destino.html">Detalle y clima</a>
+    </div>
+    <div class="footer-col">
+      <h4>PLANIFICAR</h4>
+      <a href="favoritos.html">Favoritos</a>
+      <a href="mi-ruta.html">Mi ruta</a>
+      <a href="crear-ruta.html">Crear ruta</a>
+    </div>
+    <div class="footer-col">
+      <h4>RUTEA</h4>
+      <a href="acerca.html">Acerca de</a>
+      <a href="perfil.html">Perfil</a>
+    </div>
+  </div>
+  <p class="footer-bottom">Prototipo visual estático · Los favoritos y las rutas se conservarán en el navegador.</p>
+</footer>
+
+</body>
+</html>

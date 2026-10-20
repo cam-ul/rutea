@@ -1,0 +1,139 @@
+<!-- ==========================================================================
+     RUTEA · crear-ruta.html (Crear / Editar ruta)
+     ========================================================================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editar ruta · RUTEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- === SECCIÓN 1: NAVBAR (global) === -->
+<header class="navbar">
+  <a href="index.html" class="brand" aria-label="RUTEA inicio">
+    <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
+      <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
+      <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
+      <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
+      <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
+      <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+    <span class="brand-text">RUTEA<i></i></span>
+  </a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="explorar.html" class="nav-link">Explorar</a>
+    <a href="favoritos.html" class="nav-link">Favoritos</a>
+    <a href="mi-ruta.html" class="nav-link">Mi ruta</a>
+    <a href="acerca.html" class="nav-link">Acerca de</a>
+  </nav>
+  <a href="crear-ruta.html" class="btn btn-orange nav-cta">Crear ruta</a>
+</header>
+
+<main class="container">
+
+  <!-- === SECCIÓN 2: ENCABEZADO === -->
+  <header class="page-head">
+    <p class="eyebrow">EDITAR RUTA</p>
+    <h1>Atlántico en 5 días</h1>
+    <p class="lead">Los mismos campos del alta. Guarda para sustituir la versión almacenada en el navegador.</p>
+  </header>
+
+  <!-- === SECCIÓN 3: FORMULARIO DE PLANIFICACIÓN === -->
+  <form class="card form-card" action="detalle-ruta.html" method="get">
+
+    <!-- Nombre del viaje -->
+    <div class="field">
+      <label for="f-nombre">Nombre del viaje</label>
+      <input id="f-nombre" name="nombre" type="text" value="Atlántico en 5 días">
+    </div>
+
+    <!-- Destino + viajeros -->
+    <div class="field-row">
+      <div class="field">
+        <label for="f-destino">Destino</label>
+        <input id="f-destino" name="destino" type="text" value="Portugal">
+      </div>
+      <div class="field">
+        <label for="f-viajeros">Número de viajeros</label>
+        <input id="f-viajeros" name="viajeros" type="number" min="1" value="2">
+      </div>
+    </div>
+
+    <!-- Fechas -->
+    <div class="field-row">
+      <div class="field">
+        <label for="f-salida">Fecha de salida</label>
+        <input id="f-salida" name="salida" type="date" value="2026-05-12">
+      </div>
+      <div class="field">
+        <label for="f-regreso">Fecha de regreso</label>
+        <input id="f-regreso" name="regreso" type="date" value="2026-05-17">
+      </div>
+    </div>
+
+    <!-- Presupuesto -->
+    <div class="field">
+      <label for="f-presupuesto">Presupuesto estimado (USD)</label>
+      <input id="f-presupuesto" name="presupuesto" type="number" min="0" value="1200">
+    </div>
+
+    <!-- Comentarios -->
+    <div class="field">
+      <label for="f-comentarios">Comentarios</label>
+      <textarea id="f-comentarios" name="comentarios" rows="4">Incluir tren Lisboa–Oporto. Día 3 opcional en Cascais si llueve en Sintra.</textarea>
+    </div>
+
+    <!-- Acciones -->
+    <div class="actions">
+      <a href="detalle-ruta.html" class="btn btn-orange">Guardar cambios</a>
+      <a href="mi-ruta.html" class="link-orange">Descartar</a>
+    </div>
+  </form>
+</main>
+
+<!-- === SECCIÓN 4: FOOTER (global) === -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="brand" aria-label="RUTEA inicio">
+        <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
+          <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
+          <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
+          <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
+          <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
+          <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">RUTEA<i></i></span>
+      </a>
+      <p>Descubre nuevos lugares, crea tu ruta. Exploración, clima y planificación en un solo lugar.</p>
+    </div>
+    <div class="footer-col">
+      <h4>EXPLORAR</h4>
+      <a href="explorar.html">Destinos</a>
+      <a href="index.html#recomendador">Recomendador</a>
+      <a href="detalle-destino.html">Detalle y clima</a>
+    </div>
+    <div class="footer-col">
+      <h4>PLANIFICAR</h4>
+      <a href="favoritos.html">Favoritos</a>
+      <a href="mi-ruta.html">Mi ruta</a>
+      <a href="crear-ruta.html">Crear ruta</a>
+    </div>
+    <div class="footer-col">
+      <h4>RUTEA</h4>
+      <a href="acerca.html">Acerca de</a>
+      <a href="perfil.html">Perfil</a>
+    </div>
+  </div>
+  <p class="footer-bottom">Prototipo visual estático · Los favoritos y las rutas se conservarán en el navegador.</p>
+</footer>
+
+</body>
+</html>

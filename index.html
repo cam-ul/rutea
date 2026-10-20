@@ -1,466 +1,183 @@
-<!-- index.html -->
+<!-- ==========================================================================
+     RUTEA · index.html (Inicio)
+     ========================================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RUTEA · Descubre nuevos lugares, crea tu ruta</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RUTEA · Descubre nuevos lugares, crea tu ruta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="logo-pin" viewBox="0 0 64 72">
-    <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
-    <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
-    <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
-    <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
-    <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
-  </symbol>
-</svg>
-
+<!-- === SECCIÓN 1: NAVBAR (global) === -->
 <header class="navbar">
-  <a href="#" class="brand" data-target="vista-inicio" aria-label="RUTEA inicio">
-    <svg class="brand-pin" aria-hidden="true"><use href="#logo-pin"/></svg>
+  <a href="index.html" class="brand" aria-label="RUTEA inicio">
+    <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
+      <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
+      <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
+      <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
+      <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
+      <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
     <span class="brand-text">RUTEA<i></i></span>
   </a>
   <nav class="nav-links" aria-label="Principal">
-    <a href="#" class="nav-link active" data-target="vista-inicio">Inicio</a>
-    <a href="#" class="nav-link" data-target="vista-explorar">Explorar</a>
-    <a href="#" class="nav-link" data-target="vista-favoritos">Favoritos</a>
-    <a href="#" class="nav-link" data-target="vista-mi-ruta">Mi ruta</a>
-    <a href="#" class="nav-link" data-target="vista-acerca">Acerca de</a>
+    <a href="index.html" class="nav-link active">Inicio</a>
+    <a href="explorar.html" class="nav-link">Explorar</a>
+    <a href="favoritos.html" class="nav-link">Favoritos</a>
+    <a href="mi-ruta.html" class="nav-link">Mi ruta</a>
+    <a href="acerca.html" class="nav-link">Acerca de</a>
   </nav>
-  <button class="btn btn-orange nav-cta" data-target="vista-form-ruta">Crear ruta</button>
+  <a href="crear-ruta.html" class="btn btn-orange nav-cta">Crear ruta</a>
 </header>
 
-<main>
+<main class="container">
 
-<!-- VISTA 1 -->
-<section id="vista-inicio" class="view-section active">
-  <div class="container">
-    <div class="hero">
-      <p class="eyebrow">VIAJE INDEPENDIENTE</p>
-      <h1>Descubre nuevos lugares, crea tu ruta</h1>
-      <p class="lead">RUTEA reúne destinos, clima y una planificación básica para que dejes de saltar entre aplicaciones en las primeras etapas del viaje.</p>
-      <form class="search-pill" onsubmit="return false">
-        <input type="text" placeholder="Lisboa, Kioto, Cartagena..." aria-label="Buscar destino">
-        <button type="button" class="btn btn-orange" data-target="vista-explorar">Explorar destinos</button>
-      </form>
-      <div class="mini-links">
-        <a href="#" class="link-orange" data-target="vista-explorar">Europa</a>
-        <a href="#" class="link-orange" data-target="vista-explorar">América</a>
-        <a href="#" class="link-orange" data-target="vista-explorar">Asia</a>
-        <a href="#" class="link-orange" data-target="vista-explorar">África</a>
-      </div>
+  <!-- === SECCIÓN 2: HERO + BUSCADOR === -->
+  <section class="hero">
+    <p class="eyebrow">VIAJE INDEPENDIENTE</p>
+    <h1>Descubre nuevos lugares, crea tu ruta</h1>
+    <p class="lead">RUTEA reúne destinos, clima y una planificación básica para que dejes de saltar entre aplicaciones en las primeras etapas del viaje.</p>
+    <form class="search-pill" action="explorar.html" method="get">
+      <input type="text" name="q" placeholder="Lisboa, Kioto, Cartagena..." aria-label="Buscar destino">
+      <a href="explorar.html" class="btn btn-orange">Explorar destinos</a>
+    </form>
+    <div class="mini-links">
+      <a href="explorar.html" class="link-orange">Europa</a>
+      <a href="explorar.html" class="link-orange">América</a>
+      <a href="explorar.html" class="link-orange">Asia</a>
+      <a href="explorar.html" class="link-orange">África</a>
     </div>
+  </section>
 
-    <div class="featured-grid">
-      <article class="card featured-big">
-        <div class="photo ph-lisboa"></div>
-        <div class="card-body">
-          <p class="eyebrow">DESTACADO</p>
-          <h2>Portugal</h2>
-          <p class="meta">Lisboa · Europa · 10,3 millones de habitantes</p>
-          <p>Capital, idiomas, moneda y clima actual en una sola ficha. El punto de partida más claro para armar una ruta atlántica.</p>
-          <div class="actions">
-            <button class="btn btn-orange" data-target="vista-detalle-destino">Ver detalle</button>
-            <a href="#" class="link-orange" data-target="vista-favoritos">Agregar a favoritos</a>
-          </div>
-        </div>
-      </article>
-      <div class="featured-side">
-        <article class="card featured-small">
-          <div class="photo ph-kioto"></div>
-          <div class="card-body">
-            <h3>Japón</h3>
-            <p class="meta">Tokio · Asia</p>
-            <span class="badge badge-blue">Tokio</span>
-            <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div>
-          </div>
-        </article>
-        <article class="card featured-small">
-          <div class="photo ph-lago"></div>
-          <div class="card-body">
-            <h3>Colombia</h3>
-            <p class="meta">Bogotá · América</p>
-            <span class="badge badge-blue">Bogotá</span>
-            <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div>
-          </div>
-        </article>
+  <!-- === SECCIÓN 3: DESTINOS DESTACADOS === -->
+  <section class="featured-grid" aria-label="Destinos destacados">
+    <!-- Card grande: Portugal -->
+    <article class="card featured-big">
+      <div class="media">
+        <img class="photo" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="Vista de Lisboa, Portugal" loading="lazy">
       </div>
-    </div>
-
-    <div class="banner-navy">
-      <p class="eyebrow">DE LA IDEA A LA RUTA</p>
-      <h2>Tres pasos, un mismo entorno</h2>
-      <p>Explora, guarda lo que te interesa y organízalo por destino y día. Nada de copiar datos a otra herramienta.</p>
-      <div class="steps-line" aria-label="Explorar, Favoritos, Mi ruta">
-        <div class="step-node"><span class="dot"></span><b>Explorar</b></div>
-        <div class="step-node"><span class="dot"></span><b>Favoritos</b></div>
-        <div class="step-node"><span class="dot"></span><b>Mi ruta</b></div>
-      </div>
-    </div>
-
-    <div class="two-col bottom-block">
-      <div>
-        <p class="eyebrow">RECOMENDADOR</p>
-        <h2>Si aún no sabes a dónde ir</h2>
-        <p class="lead">Indica presupuesto, clima, tipo de experiencia y duración. RUTEA sugiere destinos acordes, sin inventar un itinerario cerrado.</p>
+      <div class="card-body">
+        <p class="eyebrow">DESTACADO</p>
+        <h2>Portugal</h2>
+        <p class="meta">Lisboa · Europa · 10,3 millones de habitantes</p>
+        <p>Capital, idiomas, moneda y clima actual en una sola ficha. El punto de partida más claro para armar una ruta atlántica.</p>
         <div class="actions">
-          <button class="btn btn-navy" data-target="vista-explorar">Pedir sugerencias</button>
-          <button class="btn btn-outline" data-target="vista-acerca">Cómo funciona</button>
+          <a href="detalle-destino.html" class="btn btn-orange">Ver detalle</a>
+          <a href="favoritos.html" class="link-orange">Agregar a favoritos</a>
         </div>
       </div>
-      <div class="card weather-card">
-        <div class="card-head"><h3>Lisboa, ahora</h3><span class="badge badge-peach">Hoy</span></div>
-        <div class="weather-now">
-          <span class="sun-box"><svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true"><circle cx="24" cy="24" r="9" fill="#FF6B1A"/><g stroke="#FF6B1A" stroke-width="3" stroke-linecap="round"><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M10 38l4-4M34 14l4-4"/></g></svg></span>
-          <div><strong class="temp">22°</strong><span class="meta">Parcialmente nublado · sensación 21°</span></div>
+    </article>
+
+    <!-- Cards apiladas: Japón y Colombia -->
+    <div class="featured-side">
+      <article class="card featured-small">
+        <div class="media">
+          <img class="photo" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Templo en Kioto, Japón" loading="lazy">
         </div>
-        <p>Consulta el pronóstico básico junto a la ficha geográfica de cada destino.</p>
-        <button class="btn btn-peach" data-target="vista-detalle-destino">Ver clima en detalle</button>
-      </div>
+        <div class="card-body">
+          <h3>Japón</h3>
+          <p class="meta">Tokio · Asia</p>
+          <span class="badge badge-blue">Tokio</span>
+          <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+        </div>
+      </article>
+      <article class="card featured-small">
+        <div class="media">
+          <img class="photo" src="https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=800&q=80" alt="Lago de Guatapé, Colombia" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Colombia</h3>
+          <p class="meta">Bogotá · América</p>
+          <span class="badge badge-blue">Bogotá</span>
+          <div class="actions"><a href="detalle-destino.html" class="btn btn-navy">Ver detalles</a></div>
+        </div>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VISTA 2 -->
-<section id="vista-explorar" class="view-section">
-  <div class="container">
-    <header class="page-head">
-      <p class="eyebrow">EXPLORADOR DE DESTINOS</p>
-      <h1>Busca y compara lugares</h1>
-      <p class="lead">Filtra por región. Las tarjetas muestran datos que, en el producto, vendrán de una API pública.</p>
-    </header>
-    <form class="search-pill" onsubmit="return false">
-      <input type="text" value="costa" aria-label="Buscar destino">
-      <button type="button" class="btn btn-orange">Buscar</button>
-    </form>
-
-    <div class="explore-layout">
-      <aside class="card sidebar">
-        <h3>Región</h3>
-        <div class="pill-list">
-          <button class="pill pill-active">Todas</button>
-          <button class="pill">Europa</button>
-          <button class="pill">América</button>
-          <button class="pill">Asia</button>
-          <button class="pill">África</button>
-          <button class="pill">Oceanía</button>
-        </div>
-        <p class="note">Un filtro activo a la vez. Sin resultados se muestra un estado vacío.</p>
-        <button class="btn btn-outline btn-block" data-target="vista-inicio">No sé a dónde ir</button>
-      </aside>
-
-      <div>
-        <p class="meta results-count">6 destinos · ordenados por coincidencia</p>
-        <div class="dest-grid">
-          <article class="card dest-card"><div class="photo ph-lisboa"></div><div class="card-body"><h3>Portugal</h3><p class="meta">Europa · Lisboa</p><span class="badge badge-blue">Europa</span><div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div></div></article>
-          <article class="card dest-card"><div class="photo ph-kioto"></div><div class="card-body"><h3>Japón</h3><p class="meta">Asia · Tokio</p><span class="badge badge-blue">Asia</span><div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div></div></article>
-          <article class="card dest-card"><div class="photo ph-lago"></div><div class="card-body"><h3>Colombia</h3><p class="meta">América · Bogotá</p><span class="badge badge-blue">América</span><div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div></div></article>
-          <article class="card dest-card"><div class="photo ph-islandia"></div><div class="card-body"><h3>Islandia</h3><p class="meta">Europa · Reikiavik</p><span class="badge badge-blue">Europa</span><div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div></div></article>
-          <article class="card dest-card"><div class="photo ph-peru"></div><div class="card-body"><h3>Perú</h3><p class="meta">América · Lima</p><span class="badge badge-blue">América</span><div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div></div></article>
-          <article class="card dest-card"><div class="photo ph-marruecos"></div><div class="card-body"><h3>Marruecos</h3><p class="meta">África · Rabat</p><span class="badge badge-blue">África</span><div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalles</button></div></div></article>
-        </div>
-
-        <div class="card empty-card">
-          <p class="eyebrow">ESTADO VACÍO</p>
-          <h3>Sin coincidencias para "Antártida"</h3>
-          <p>Prueba otra región o abre el recomendador si todavía estás eligiendo el tipo de viaje.</p>
-          <div class="actions">
-            <button class="btn btn-orange" data-target="vista-inicio">Usar recomendador</button>
-            <a href="#" class="link-orange">Quitar filtros</a>
-          </div>
-        </div>
-      </div>
+  <!-- === SECCIÓN 4: BANNER "TRES PASOS" === -->
+  <section class="banner-navy">
+    <p class="eyebrow">DE LA IDEA A LA RUTA</p>
+    <h2>Tres pasos, un mismo entorno</h2>
+    <p>Explora, guarda lo que te interesa y organízalo por destino y día. Nada de copiar datos a otra herramienta.</p>
+    <div class="steps-line" aria-label="Explorar, Favoritos, Mi ruta">
+      <div class="step-node"><span class="dot"></span><b>Explorar</b></div>
+      <div class="step-node"><span class="dot"></span><b>Favoritos</b></div>
+      <div class="step-node"><span class="dot"></span><b>Mi ruta</b></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VISTA 3 -->
-<section id="vista-detalle-destino" class="view-section">
-  <div class="container">
-    <div class="alert">Portugal está en favoritos. No se duplicará si lo vuelves a guardar.</div>
-    <header class="page-head">
-      <p class="eyebrow">DETALLE DEL DESTINO</p>
-      <h1><span class="flag">🇵🇹</span> Portugal <span class="badge badge-peach">Europa</span></h1>
-      <p class="lead">Información geográfica para decidir, y el clima de Lisboa para acotar fechas. Desde aquí puedes guardar el destino o convertirlo en ruta.</p>
+  <!-- === SECCIÓN 5: RECOMENDADOR + CLIMA (ancla #recomendador) === -->
+  <section id="recomendador" class="two-col bottom-block">
+    <div>
+      <p class="eyebrow">RECOMENDADOR</p>
+      <h2>Si aún no sabes a dónde ir</h2>
+      <p class="lead">Indica presupuesto, clima, tipo de experiencia y duración. RUTEA sugiere destinos acordes, sin inventar un itinerario cerrado.</p>
       <div class="actions">
-        <button class="btn btn-orange" data-target="vista-form-ruta">Crear ruta</button>
-        <a href="#" class="link-orange" data-target="vista-favoritos">Quitar de favoritos</a>
-        <button class="btn btn-outline" data-target="vista-explorar">Volver a explorar</button>
-      </div>
-    </header>
-
-    <div class="two-col detail-grid">
-      <div class="stack">
-        <div class="photo photo-wide ph-lisboa"></div>
-        <div class="card info-grid">
-          <div class="info-cell"><span>Capital</span><b>Lisboa</b></div>
-          <div class="info-cell"><span>Región</span><b>Europa</b></div>
-          <div class="info-cell"><span>Población</span><b>10,3 millones</b></div>
-          <div class="info-cell"><span>Idiomas</span><b>Portugués</b></div>
-          <div class="info-cell"><span>Moneda</span><b>Euro (EUR)</b></div>
-          <div class="info-cell"><span>Ubicación</span><b>38.72° N, 9.14° O</b></div>
-        </div>
-      </div>
-      <div class="stack">
-        <div class="card">
-          <div class="card-head"><h3>Clima en Lisboa</h3><span class="badge badge-peach">Hoy</span></div>
-          <div class="weather-now">
-            <span class="dot-big"></span>
-            <div><strong class="temp">22°</strong><span class="meta">Parcialmente nublado · 58 % humedad</span></div>
-          </div>
-          <h4>Pronóstico básico</h4>
-          <div class="forecast">
-            <div class="mini-card"><span>Mañana</span><b>21°</b><small>Nubes</small></div>
-            <div class="mini-card"><span>Mié</span><b>19°</b><small>Lluvia breve</small></div>
-            <div class="mini-card"><span>Jue</span><b>23°</b><small>Soleado</small></div>
-          </div>
-        </div>
-        <div class="card card-dark">
-          <p class="eyebrow">Ubicación geográfica</p>
-          <h3>Lisboa, Portugal</h3>
-          <p class="coords">Lat 38.7169 · Lon -9.1399</p>
-        </div>
+        <a href="index.html#recomendador" class="btn btn-navy">Pedir sugerencias</a>
+        <a href="acerca.html" class="btn btn-outline">Cómo funciona</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- VISTA 4 -->
-<section id="vista-favoritos" class="view-section">
-  <div class="container">
-    <header class="page-head">
-      <p class="eyebrow">COLECCIÓN PERSONAL</p>
-      <h1>Favoritos</h1>
-      <p class="lead">Tres destinos en este dispositivo. RUTEA evita duplicados y guarda la lista con almacenamiento local.</p>
-    </header>
-    <div class="stack">
-      <article class="card fav-card">
-        <div class="thumb ph-lisboa"></div>
-        <div class="fav-info"><h3>Portugal</h3><p class="meta">Lisboa · Europa · guardado hoy</p>
-          <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalle</button><button class="btn btn-outline" data-target="vista-form-ruta">Pasar a ruta</button></div></div>
-        <a href="#" class="link-orange fav-remove">Quitar</a>
-      </article>
-      <article class="card fav-card">
-        <div class="thumb ph-kioto"></div>
-        <div class="fav-info"><h3>Japón</h3><p class="meta">Tokio · Asia · guardado ayer</p>
-          <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalle</button></div></div>
-        <a href="#" class="link-orange fav-remove">Quitar</a>
-      </article>
-      <article class="card fav-card">
-        <div class="thumb ph-lago"></div>
-        <div class="fav-info"><h3>Colombia</h3><p class="meta">Bogotá · América · guardado esta semana</p>
-          <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-destino">Ver detalle</button></div></div>
-        <a href="#" class="link-orange fav-remove">Quitar</a>
-      </article>
-      <div class="card empty-card">
-        <p class="eyebrow">SI LA LISTA ESTÁ VACÍA</p>
-        <h3>Todavía no hay destinos guardados</h3>
-        <p>Explora y usa "Agregar a favoritos". La selección permanece en este navegador.</p>
-        <div class="actions"><button class="btn btn-orange" data-target="vista-explorar">Explorar destinos</button></div>
+    <div class="card weather-card">
+      <div class="card-head"><h3>Lisboa, ahora</h3><span class="badge badge-peach">Hoy</span></div>
+      <div class="weather-now">
+        <span class="sun-box">
+          <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+            <circle cx="24" cy="24" r="9" fill="#FF6B1A"/>
+            <g stroke="#FF6B1A" stroke-width="3" stroke-linecap="round"><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M10 38l4-4M34 14l4-4"/></g>
+          </svg>
+        </span>
+        <div><strong class="temp">22°</strong><span class="meta">Parcialmente nublado · sensación 21°</span></div>
       </div>
+      <p>Consulta el pronóstico básico junto a la ficha geográfica de cada destino.</p>
+      <a href="detalle-destino.html" class="btn btn-peach">Ver clima en detalle</a>
     </div>
-  </div>
-</section>
-
-<!-- VISTA 5 -->
-<section id="vista-mi-ruta" class="view-section">
-  <div class="container">
-    <header class="page-head">
-      <p class="eyebrow">PLANIFICADOR</p>
-      <h1>Mi ruta</h1>
-      <p class="lead">Crea, consulta, edita o elimina rutas organizadas por destino y día. Se conservan en el navegador.</p>
-      <div class="actions"><button class="btn btn-orange" data-target="vista-form-ruta">Crear ruta</button></div>
-    </header>
-    <div class="stack">
-      <article class="card route-card">
-        <div class="route-dates"><b>12–17 may 2026</b><span class="meta">2 viajeros</span></div>
-        <div class="route-main"><h3>Atlántico en 5 días</h3><p class="meta">Portugal · presupuesto 1.200 USD</p></div>
-        <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-ruta">Ver</button><button class="btn btn-outline" data-target="vista-form-ruta">Editar</button></div>
-      </article>
-      <article class="card route-card">
-        <div class="route-dates"><b>3–10 ago 2026</b><span class="meta">3 viajeros</span></div>
-        <div class="route-main"><h3>Andes y café</h3><p class="meta">Colombia · presupuesto 1.800 USD</p></div>
-        <div class="actions"><button class="btn btn-navy" data-target="vista-detalle-ruta">Ver</button><a href="#" class="link-orange">Eliminar</a></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- VISTA 6 -->
-<section id="vista-detalle-ruta" class="view-section">
-  <div class="container">
-    <div class="alert">Ruta guardada en este navegador.</div>
-    <header class="page-head">
-      <p class="eyebrow">DETALLE DE LA RUTA</p>
-      <h1>Atlántico en 5 días <span class="badge badge-peach">Portugal</span></h1>
-      <p class="lead">12 al 17 de mayo de 2026 · 2 viajeros · 1.200 USD. Actividades agrupadas por día.</p>
-      <div class="actions">
-        <button class="btn btn-orange" data-target="vista-form-ruta">Editar ruta</button>
-        <button class="btn btn-outline" data-target="vista-detalle-destino">Ficha del destino</button>
-        <a href="#" class="link-orange">Eliminar</a>
-      </div>
-    </header>
-    <div class="two-col detail-grid">
-      <ol class="timeline">
-        <li><h3>Día 1 · Lisboa</h3><p>Alfama a pie, atardecer en el mirador de Santa Catarina.</p></li>
-        <li><h3>Día 2 · Belém y río</h3><p>Jerónimos por la mañana. Tarde libre junto al Tajo.</p></li>
-        <li><h3>Día 3 · Sintra</h3><p>Excursión de un día. Regreso a Lisboa por la noche.</p></li>
-        <li><h3>Día 4 · Oporto</h3><p>Tren matinal. Ribeira y bodegas en Vila Nova de Gaia.</p></li>
-        <li><h3>Día 5 · Salida</h3><p>Mañana libre. Traslado al aeropuerto.</p></li>
-      </ol>
-      <div class="card">
-        <div class="card-head"><h3>Clima previsto</h3><span class="badge badge-peach">Lisboa</span></div>
-        <strong class="temp">19–23°</strong>
-        <p>Templado, posible lluvia breve el miércoles. Útil para decidir capas, no para cerrar el itinerario.</p>
-        <div class="photo photo-wide ph-lisboa"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VISTA 7 -->
-<section id="vista-form-ruta" class="view-section">
-  <div class="container">
-    <header class="page-head">
-      <p class="eyebrow">EDITAR RUTA</p>
-      <h1>Atlántico en 5 días</h1>
-      <p class="lead">Los mismos campos del alta. Guarda para sustituir la versión almacenada en el navegador.</p>
-    </header>
-    <form class="card form-card" onsubmit="return false">
-      <div class="field"><label for="f-nombre">Nombre del viaje</label><input id="f-nombre" type="text" value="Atlántico en 5 días"></div>
-      <div class="field-row">
-        <div class="field"><label for="f-destino">Destino</label><input id="f-destino" type="text" value="Portugal"></div>
-        <div class="field"><label for="f-viajeros">Número de viajeros</label><input id="f-viajeros" type="number" min="1" value="2"></div>
-      </div>
-      <div class="field-row">
-        <div class="field"><label for="f-salida">Fecha de salida</label><input id="f-salida" type="date" value="2026-05-12"></div>
-        <div class="field"><label for="f-regreso">Fecha de regreso</label><input id="f-regreso" type="date" value="2026-05-17"></div>
-      </div>
-      <div class="field"><label for="f-presupuesto">Presupuesto estimado (USD)</label><input id="f-presupuesto" type="number" min="0" value="1200"></div>
-      <div class="field"><label for="f-comentarios">Comentarios</label><textarea id="f-comentarios" rows="4">Incluir tren Lisboa–Oporto. Día 3 opcional en Cascais si llueve en Sintra.</textarea></div>
-      <div class="actions">
-        <button type="button" class="btn btn-orange" data-target="vista-detalle-ruta">Guardar cambios</button>
-        <a href="#" class="link-orange" data-target="vista-mi-ruta">Descartar</a>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- VISTA 8 -->
-<section id="vista-acerca" class="view-section">
-  <div class="container">
-    <header class="page-head">
-      <p class="eyebrow">ACERCA DE RUTEA</p>
-      <h1>Una sola mesa de trabajo para el inicio del viaje</h1>
-      <p class="lead">La planificación suele partirse entre un sitio para descubrir destinos, otro para el clima y una nota para no olvidar lo elegido. RUTEA conecta esas piezas.</p>
-    </header>
-    <div class="two-col">
-      <article class="card"><h3>Qué resuelve</h3><p>Fragmentación, tiempo de búsqueda y datos sueltos. La plataforma cubre exploración, ficha geográfica, clima básico, favoritos y un planificador por destino y día.</p></article>
-      <article class="card"><h3>Qué no es</h3><p>No es una agencia, no vende boletos y no sustituye un itinerario profesional. Es un frontend responsive con APIs públicas y persistencia local.</p></article>
-    </div>
-    <div class="banner-navy">
-      <h3>Para quién</h3>
-      <p>Personas de 18 a 60 años que viajan por su cuenta, comparan alternativas y necesitan una navegación clara en computador, tableta o teléfono.</p>
-      <div class="steps-line" aria-label="Explorador, Independiente, Planificador">
-        <div class="step-node"><span class="dot"></span><b>Explorador</b></div>
-        <div class="step-node"><span class="dot"></span><b>Independiente</b></div>
-        <div class="step-node"><span class="dot"></span><b>Planificador</b></div>
-      </div>
-    </div>
-    <div class="actions">
-      <button class="btn btn-orange" data-target="vista-explorar">Empezar a explorar</button>
-      <button class="btn btn-outline" data-target="vista-inicio">Pedir una sugerencia</button>
-    </div>
-  </div>
-</section>
-
-<!-- VISTA 9 -->
-<section id="vista-perfil" class="view-section">
-  <div class="container">
-    <header class="page-head">
-      <p class="eyebrow">ESTE DISPOSITIVO</p>
-      <h1>Perfil</h1>
-      <p class="lead">RUTEA no abre cuentas. Favoritos y rutas viven en el almacenamiento local del navegador que estás usando.</p>
-    </header>
-    <div class="card profile-card">
-      <h3>Datos conservados aquí</h3>
-      <div class="metrics">
-        <div class="metric"><strong>3</strong><span>destinos en favoritos</span></div>
-        <div class="metric"><strong>2</strong><span>rutas guardadas</span></div>
-      </div>
-      <p>Si borras los datos del sitio, la colección desaparece. No hay sincronización entre teléfonos.</p>
-      <div class="actions">
-        <button class="btn btn-navy" data-target="vista-favoritos">Abrir favoritos</button>
-        <button class="btn btn-outline" data-target="vista-mi-ruta">Abrir mis rutas</button>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
+<!-- === SECCIÓN 6: FOOTER (global) === -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
-      <a href="#" class="brand" data-target="vista-inicio" aria-label="RUTEA inicio">
-        <svg class="brand-pin" aria-hidden="true"><use href="#logo-pin"/></svg>
+      <a href="index.html" class="brand" aria-label="RUTEA inicio">
+        <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
+          <path d="M32 70C32 70 8 46 8 30a24 24 0 0 1 48 0c0 16-24 40-24 40Z" fill="#122B4D" stroke="#2C4A75" stroke-width="1.5"/>
+          <circle cx="32" cy="27" r="19" fill="none" stroke="#FF6B1A" stroke-width="6"/>
+          <path d="M18 30 30 14l6 8 4-4 8 12Z" fill="#FF6B1A"/>
+          <path d="M14 36 26 24l6 8 6-6 12 14c-4 8-10 16-18 24C24 62 16 48 14 36Z" fill="#081C38"/>
+          <path d="M34 34c-8 3-6 8 0 10s8 6 0 12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
         <span class="brand-text">RUTEA<i></i></span>
       </a>
       <p>Descubre nuevos lugares, crea tu ruta. Exploración, clima y planificación en un solo lugar.</p>
     </div>
     <div class="footer-col">
       <h4>EXPLORAR</h4>
-      <a href="#" data-target="vista-explorar">Destinos</a>
-      <a href="#" data-target="vista-inicio">Recomendador</a>
-      <a href="#" data-target="vista-detalle-destino">Detalle y clima</a>
+      <a href="explorar.html">Destinos</a>
+      <a href="index.html#recomendador">Recomendador</a>
+      <a href="detalle-destino.html">Detalle y clima</a>
     </div>
     <div class="footer-col">
       <h4>PLANIFICAR</h4>
-      <a href="#" data-target="vista-favoritos">Favoritos</a>
-      <a href="#" data-target="vista-mi-ruta">Mi ruta</a>
-      <a href="#" data-target="vista-form-ruta">Crear ruta</a>
+      <a href="favoritos.html">Favoritos</a>
+      <a href="mi-ruta.html">Mi ruta</a>
+      <a href="crear-ruta.html">Crear ruta</a>
     </div>
     <div class="footer-col">
       <h4>RUTEA</h4>
-      <a href="#" data-target="vista-acerca">Acerca de</a>
-      <a href="#" data-target="vista-perfil">Perfil</a>
+      <a href="acerca.html">Acerca de</a>
+      <a href="perfil.html">Perfil</a>
     </div>
   </div>
   <p class="footer-bottom">Prototipo visual estático · Los favoritos y las rutas se conservarán en el navegador.</p>
 </footer>
 
-<script>
-(function () {
-  var sections = document.querySelectorAll('.view-section');
-  var navLinks = document.querySelectorAll('.nav-link');
-
-  function showView(id) {
-    var target = document.getElementById(id);
-    if (!target) return;
-    sections.forEach(function (s) { s.classList.remove('active'); });
-    target.classList.add('active');
-    navLinks.forEach(function (l) {
-      l.classList.toggle('active', l.getAttribute('data-target') === id);
-    });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  document.addEventListener('click', function (e) {
-    var trigger = e.target.closest('[data-target]');
-    if (!trigger) return;
-    e.preventDefault();
-    showView(trigger.getAttribute('data-target'));
-  });
-
-  showView('vista-inicio');
-})();
-</script>
 </body>
 </html>
