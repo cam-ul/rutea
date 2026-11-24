@@ -1,6 +1,3 @@
-<!-- ==========================================================================
-     RUTEA · mi-ruta.html (Mi ruta)
-     ========================================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +11,6 @@
 </head>
 <body>
 
-<!-- === SECCIÓN 1: NAVBAR (global) === -->
 <header class="navbar">
   <a href="index.html" class="brand" aria-label="RUTEA inicio">
     <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
@@ -38,45 +34,22 @@
 
 <main class="container">
 
-  <!-- === SECCIÓN 2: ENCABEZADO === -->
   <header class="page-head">
     <p class="eyebrow">PLANIFICADOR</p>
-    <h1>Mi ruta</h1>
-    <p class="lead">Crea, consulta, edita o elimina rutas organizadas por destino y día. Se conservan en el navegador.</p>
+    <h1>Mis rutas</h1>
+    <p class="lead">Aquí se listan tus planes de viaje (puedes guardar varios). Cada ruta es un destino con fechas, presupuesto y un esquema día a día. Se conservan solo en este navegador.</p>
     <div class="actions">
-      <a href="crear-ruta.html" class="btn btn-orange">Crear ruta</a>
+      <a href="crear-ruta.html" class="btn btn-orange">Nueva ruta</a>
+      <a href="explorar.html" class="btn btn-outline">Elegir destino</a>
     </div>
   </header>
 
-  <!-- === SECCIÓN 3: LISTA DE RUTAS === -->
+  <p class="meta results-count" id="routes-count">Cargando rutas…</p>
   <div class="stack">
-    <article class="card route-card">
-      <div class="route-dates"><b>12–17 may 2026</b><span class="meta">2 viajeros</span></div>
-      <div class="route-main">
-        <h3>Atlántico en 5 días</h3>
-        <p class="meta">Portugal · presupuesto 1.200 USD</p>
-      </div>
-      <div class="actions">
-        <a href="detalle-ruta.html" class="btn btn-navy">Ver</a>
-        <a href="crear-ruta.html" class="btn btn-outline">Editar</a>
-      </div>
-    </article>
-
-    <article class="card route-card">
-      <div class="route-dates"><b>3–10 ago 2026</b><span class="meta">3 viajeros</span></div>
-      <div class="route-main">
-        <h3>Andes y café</h3>
-        <p class="meta">Colombia · presupuesto 1.800 USD</p>
-      </div>
-      <div class="actions">
-        <a href="detalle-ruta.html" class="btn btn-navy">Ver</a>
-        <a href="mi-ruta.html" class="link-orange">Eliminar</a>
-      </div>
-    </article>
+    <p class="meta loading-msg">Cargando rutas…</p>
   </div>
 </main>
 
-<!-- === SECCIÓN 4: FOOTER (global) === -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
@@ -110,8 +83,9 @@
       <a href="perfil.html">Perfil</a>
     </div>
   </div>
-  <p class="footer-bottom">Prototipo visual estático · Los favoritos y las rutas se conservarán en el navegador.</p>
+  <p class="footer-bottom">Los favoritos y las rutas se guardan en este navegador.</p>
 </footer>
 
+<script type="module" src="js/pages/mi-ruta.js"></script>
 </body>
 </html>

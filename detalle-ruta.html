@@ -1,12 +1,9 @@
-<!-- ==========================================================================
-     RUTEA · detalle-ruta.html (Detalle de la ruta)
-     ========================================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atlántico en 5 días · Detalle de la ruta · RUTEA</title>
+  <title>Detalle de la ruta · RUTEA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +11,6 @@
 </head>
 <body>
 
-<!-- === SECCIÓN 1: NAVBAR (global) === -->
 <header class="navbar">
   <a href="index.html" class="brand" aria-label="RUTEA inicio">
     <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
@@ -38,58 +34,25 @@
 
 <main class="container">
 
-  <!-- === SECCIÓN 2: ALERTA Y ENCABEZADO === -->
-  <div class="alert">Ruta guardada en este navegador.</div>
+  <div class="alert" hidden>Ruta guardada en este navegador.</div>
 
   <header class="page-head">
     <p class="eyebrow">DETALLE DE LA RUTA</p>
-    <h1>Atlántico en 5 días <span class="badge badge-peach">Portugal</span></h1>
-    <p class="lead">12 al 17 de mayo de 2026 · 2 viajeros · 1.200 USD. Actividades agrupadas por día.</p>
-    <div class="actions">
-      <a href="crear-ruta.html" class="btn btn-orange">Editar ruta</a>
-      <a href="detalle-destino.html" class="btn btn-outline">Ficha del destino</a>
-      <a href="mi-ruta.html" class="link-orange">Eliminar</a>
-    </div>
+    <h1>Cargando ruta…</h1>
+    <p class="lead">Actividades agrupadas por día.</p>
+    <div class="actions"></div>
   </header>
 
-  <!-- === SECCIÓN 3: GRID DE DOS COLUMNAS === -->
   <div class="two-col detail-grid">
+    <ol class="timeline"></ol>
 
-    <!-- Columna izquierda: línea de tiempo por día -->
-    <ol class="timeline">
-      <li>
-        <h3>Día 1 · Lisboa</h3>
-        <p>Alfama a pie, atardecer en el mirador de Santa Catarina.</p>
-      </li>
-      <li>
-        <h3>Día 2 · Belém y río</h3>
-        <p>Jerónimos por la mañana. Tarde libre junto al Tajo.</p>
-      </li>
-      <li>
-        <h3>Día 3 · Sintra</h3>
-        <p>Excursión de un día. Regreso a Lisboa por la noche.</p>
-      </li>
-      <li>
-        <h3>Día 4 · Oporto</h3>
-        <p>Tren matinal. Ribeira y bodegas en Vila Nova de Gaia.</p>
-      </li>
-      <li>
-        <h3>Día 5 · Salida</h3>
-        <p>Mañana libre. Traslado al aeropuerto.</p>
-      </li>
-    </ol>
-
-    <!-- === SECCIÓN 4: CLIMA PREVISTO === -->
     <div class="card">
-      <div class="card-head"><h3>Clima previsto</h3><span class="badge badge-peach">Lisboa</span></div>
-      <strong class="temp">19–23°</strong>
-      <p>Templado, posible lluvia breve el miércoles. Útil para decidir capas, no para cerrar el itinerario.</p>
-      <img class="photo photo-wide" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="Panorámica de Lisboa, Portugal" loading="lazy">
+      <div class="card-head"><h3>Clima previsto</h3><span class="badge badge-peach">…</span></div>
+      <p class="meta loading-msg">Cargando clima…</p>
     </div>
   </div>
 </main>
 
-<!-- === SECCIÓN 5: FOOTER (global) === -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
@@ -123,8 +86,9 @@
       <a href="perfil.html">Perfil</a>
     </div>
   </div>
-  <p class="footer-bottom">Prototipo visual estático · Los favoritos y las rutas se conservarán en el navegador.</p>
+  <p class="footer-bottom">Los favoritos y las rutas se guardan en este navegador.</p>
 </footer>
 
+<script type="module" src="js/pages/detalle-ruta.js"></script>
 </body>
 </html>

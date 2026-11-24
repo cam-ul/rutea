@@ -1,12 +1,9 @@
-<!-- ==========================================================================
-     RUTEA · crear-ruta.html (Crear / Editar ruta)
-     ========================================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Editar ruta · RUTEA</title>
+  <title>Crear ruta · RUTEA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +11,6 @@
 </head>
 <body>
 
-<!-- === SECCIÓN 1: NAVBAR (global) === -->
 <header class="navbar">
   <a href="index.html" class="brand" aria-label="RUTEA inicio">
     <svg class="brand-pin" viewBox="0 0 64 72" aria-hidden="true">
@@ -38,67 +34,66 @@
 
 <main class="container">
 
-  <!-- === SECCIÓN 2: ENCABEZADO === -->
   <header class="page-head">
-    <p class="eyebrow">EDITAR RUTA</p>
-    <h1>Atlántico en 5 días</h1>
-    <p class="lead">Los mismos campos del alta. Guarda para sustituir la versión almacenada en el navegador.</p>
+    <p class="eyebrow">CREAR RUTA</p>
+    <h1>Nueva ruta de viaje</h1>
+    <p class="lead">Cada guardado añade un plan nuevo a Mis rutas (salvo que estés editando uno existente). Define destino, fechas, presupuesto y una nota por día.</p>
   </header>
 
-  <!-- === SECCIÓN 3: FORMULARIO DE PLANIFICACIÓN === -->
-  <form class="card form-card" action="detalle-ruta.html" method="get">
+  <form id="route-form" class="card form-card" novalidate>
+    <input type="hidden" name="code" id="f-code" value="">
 
-    <!-- Nombre del viaje -->
     <div class="field">
       <label for="f-nombre">Nombre del viaje</label>
-      <input id="f-nombre" name="nombre" type="text" value="Atlántico en 5 días">
+      <input id="f-nombre" name="nombre" type="text" placeholder="Ej. Atlántico en 5 días" required>
     </div>
 
-    <!-- Destino + viajeros -->
     <div class="field-row">
       <div class="field">
-        <label for="f-destino">Destino</label>
-        <input id="f-destino" name="destino" type="text" value="Portugal">
+        <label for="f-destino">Destino principal</label>
+        <input id="f-destino" name="destino" type="text" list="destinos-list" placeholder="País o ciudad" required autocomplete="off">
+        <datalist id="destinos-list"></datalist>
       </div>
       <div class="field">
         <label for="f-viajeros">Número de viajeros</label>
-        <input id="f-viajeros" name="viajeros" type="number" min="1" value="2">
+        <input id="f-viajeros" name="viajeros" type="number" min="1" value="1" required>
       </div>
     </div>
 
-    <!-- Fechas -->
     <div class="field-row">
       <div class="field">
         <label for="f-salida">Fecha de salida</label>
-        <input id="f-salida" name="salida" type="date" value="2026-05-12">
+        <input id="f-salida" name="salida" type="date" required>
       </div>
       <div class="field">
         <label for="f-regreso">Fecha de regreso</label>
-        <input id="f-regreso" name="regreso" type="date" value="2026-05-17">
+        <input id="f-regreso" name="regreso" type="date" required>
       </div>
     </div>
 
-    <!-- Presupuesto -->
     <div class="field">
       <label for="f-presupuesto">Presupuesto estimado (USD)</label>
-      <input id="f-presupuesto" name="presupuesto" type="number" min="0" value="1200">
+      <input id="f-presupuesto" name="presupuesto" type="number" min="0" step="1" placeholder="1200" required>
     </div>
 
-    <!-- Comentarios -->
     <div class="field">
-      <label for="f-comentarios">Comentarios</label>
-      <textarea id="f-comentarios" name="comentarios" rows="4">Incluir tren Lisboa–Oporto. Día 3 opcional en Cascais si llueve en Sintra.</textarea>
+      <label for="f-comentarios">Notas generales</label>
+      <textarea id="f-comentarios" name="comentarios" rows="3" placeholder="Transporte, alojamiento, ideas sueltas…"></textarea>
     </div>
 
-    <!-- Acciones -->
+    <div class="days-editor" id="days-editor" hidden>
+      <h3>Plan por día</h3>
+      <p class="meta">Se genera según las fechas. Ajusta las notas de cada jornada.</p>
+      <div class="days-fields" id="days-fields"></div>
+    </div>
+
     <div class="actions">
-      <a href="detalle-ruta.html" class="btn btn-orange">Guardar cambios</a>
-      <a href="mi-ruta.html" class="link-orange">Descartar</a>
+      <button type="submit" class="btn btn-orange">Guardar ruta</button>
+      <a href="mi-ruta.html" class="link-orange">Volver a mis rutas</a>
     </div>
   </form>
 </main>
 
-<!-- === SECCIÓN 4: FOOTER (global) === -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
@@ -132,8 +127,9 @@
       <a href="perfil.html">Perfil</a>
     </div>
   </div>
-  <p class="footer-bottom">Prototipo visual estático · Los favoritos y las rutas se conservarán en el navegador.</p>
+  <p class="footer-bottom">Los favoritos y las rutas se guardan en este navegador.</p>
 </footer>
 
+<script type="module" src="js/pages/crear-ruta.js"></script>
 </body>
 </html>
